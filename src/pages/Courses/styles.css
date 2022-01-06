@@ -80,8 +80,8 @@
 .card > img {
   object-fit: cover;
 
-  width: 170px;
-  min-height: 100px;
+  min-width: 170px;
+  height: 100px;
 
   border-radius: 10px 0px 0px 10px;
 }
