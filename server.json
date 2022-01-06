@@ -1,0 +1,12 @@
+{
+  "cursos": [
+    {
+      "id": 1,
+      "name": "Curso de React",
+      "description": "Como criar aplicativos utilizando React...",
+      "available": true,
+      "workload": "20h",
+      "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png"
+    }
+  ]
+}
