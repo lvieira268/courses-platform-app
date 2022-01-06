@@ -1,0 +1,56 @@
+.sidebar {
+  position: fixed;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 60px 35px;
+
+  width: 100px;
+  height: 100%;
+
+  background-color: #222E44;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-item {
+  margin-bottom: 50px;
+}
+
+.nav-item.top {
+  margin-bottom: 86px;
+}
+
+.icon {
+  font-size: 32px;
+  color: #fff;
+}
+
+.icon.active {
+  color: #EC3F5F;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: 100px;
+
+    padding-top: 20px;
+    position: relative;
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+
+  .nav-item {
+    margin-left: 30px;
+  }
+}
