@@ -2,7 +2,7 @@
   "cursos": [
     {
       "id": 1,
-      "title": "Curso de Svelte",
+      "name": "Curso de Svelte",
       "description": "Um curso para introdução ao Svelte com...",
       "available": true,
       "workload": "20h",
@@ -10,11 +10,18 @@
     },
     {
       "id": 2,
-      "title": "Curso de React",
+      "name": "Curso de React",
       "description": "Como criar aplicativos utilizando React...",
       "available": false,
       "workload": "20h",
       "image": "https://www.luiztools.com.br/wp-content/uploads/2020/06/reactJS.png"
+    },
+    {
+      "name": "Curso de CSS",
+      "description": "Se torne um expert em CSS",
+      "workload": "200H",
+      "available": "10/12/2022",
+      "id": 3
     }
   ]
 }
