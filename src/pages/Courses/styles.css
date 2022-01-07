@@ -1,0 +1,277 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 30px;
+  margin-left: 100px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  text-transform: uppercase;
+  line-height: 30px;
+
+  color: #000000;
+}
+
+.btn-new-course {
+  width: 250px;
+  height: 35px;
+
+  background: #1DBAD3;
+  border-radius: 5px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+
+  color: #fff;
+
+  border: none;
+}
+
+.btn-new-course:hover {
+  background: #126471;
+  transition: 1s ease;
+}
+
+.box-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  min-height: 100px;
+  margin-bottom: 30px;
+
+  background: #F5F9F9;
+  box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.card > img {
+  object-fit: cover;
+
+  min-width: 170px;
+  height: 100px;
+
+  border-radius: 10px 0px 0px 10px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+
+  padding: 15px 20px;
+  width: calc(100% - 170px);
+}
+
+.text-container > .title-card {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+
+  color: #000000;
+
+  margin-bottom: 5px;
+}
+
+.text-container > .description-card {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #333333;
+}
+
+.actions-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin: 15px 20px;
+}
+
+.icons > .button-action {
+  font-size: 20px;
+  border: none;
+
+  background: transparent;
+}
+
+.pill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 120px;
+  height: 25px;
+
+  border-radius: 15px;
+}
+
+.pill > p {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 19px;
+
+  text-transform: uppercase;
+
+  color: #fff;
+}
+
+.pill.active {
+  background: #86C51F;
+}
+
+.pill.disable {
+  background: #EC3F5F;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-primary.primary {
+  color: #1E0D83;
+}
+
+.icon-action.danger {
+  color: #EC3F5F;
+}
+
+.modal-inputs {
+  display: flex;
+}
+
+.btn-create {
+  padding: 5px auto;
+  width: 200px;
+  height: 35px;
+
+  border-radius: 5px;
+  border: none;
+
+  color: #fff;
+
+  background: #86C51F;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-create:hover {
+  background: #61940f;
+  transition: 1s ease;
+}
+
+@media screen and (max-width: 700px) {
+  .content {
+    margin-left: 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 338px;
+  }
+
+  .card > img {
+    width: auto;
+    height: 120px;
+
+    border-radius: 10px 10px 0px 0px;
+  }
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  margin-bottom: 30px;
+}
+
+input {
+  padding: 9px 17px;
+  height: 40px;
+
+  color: #000;
+
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 5px;
+
+  background: #FFFFFF;
+}
+
+textarea {
+  padding: 9px 17px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  width: auto;
+  height: 200px;
+
+  color: #000;
+  font-family: 'Open Sans', sans-serif;
+
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 5px;
+
+  background: #FFFFFF;
+}
+
+.input-container:last-child {
+  margin-left: auto;
+}
+
+label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+
+  margin-bottom: 5px;
+
+  color: #000000;
+}

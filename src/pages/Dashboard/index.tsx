@@ -1,16 +1,24 @@
-import { ReactNode } from 'react';
+import React from 'react';
+import Breadcrumb from '../../components/Breadcrumb';
 
-interface DashboardProps {
-  children: ReactNode;
-}
+import Header from '../../components/Header';
+import Sidebar from '../../components/Sidebar';
 
-function Dashboard({ children }: DashboardProps) {
+import './styles.css';
+
+const Dashboard: React.FC = () => {
   return (
-    <>
-      <h1>Dashboard</h1>
-      {children}
-    </>
+    <div className="container">
+      <Sidebar />
+      <Header />
+      <Breadcrumb page="" />
+      <main>
+        <i className="bi bi-book icon-main" />
+        <p className="welcome">bem-vindo(a)</p>
+        <p className="description">Aproveite sua plataforma de cursos</p>
+      </main>
+    </div>
   );
-}
+};
 
 export default Dashboard;
