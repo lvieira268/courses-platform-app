@@ -24,21 +24,23 @@
         "prettier"
     ],
     "rules": {
+      "prettier/prettier": "error",
+      "react/jsx-one-expression-per-line": "off",
+      "react/jsx-props-no-spreading": "off",
+      "react/prop-types": "off",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
-      "react/jsx-filename-extension": [
-        1,
+      "no-unused-expressions": "off",
+      "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+      "import/prefer-default-export": "off",
+      "import/no-duplicates": "off",
+      "@typescript-eslint/camelcase": "off",
+      "@typescript-eslint/explicit-function-return-type": [
+        "off",
         {
-        "extensions": [
-          ".tsx"
-        ]
+          "allowExpressions": true
         }
       ],
-      "no-use-before-define": "off",
-      "@typescript-eslint/no-use-before-define": [
-        "error"
-      ],
-      "react/react-in-jsx-scope": "off",
       "import/extensions": [
         "error",
         "ignorePackages",
@@ -46,14 +48,13 @@
           "ts": "never",
           "tsx": "never"
         }
-     ],
-     "react/function-component-definition": [
-      2,
-      {
-        "namedComponents": "function-declaration",
-      }
-    ],
-     "prettier/prettier": "error"
+      ],
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+      "react/function-component-definition": [0, {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }]
     },
     "settings": {
       "import/resolver": {

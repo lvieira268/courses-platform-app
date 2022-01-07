@@ -1,0 +1,20 @@
+{
+  "cursos": [
+    {
+      "id": 1,
+      "name": "Curso de Svelte",
+      "description": "Um curso para introdução ao Svelte com...",
+      "available": true,
+      "workload": "20h",
+      "image": "https://pbs.twimg.com/profile_images/1121395911849062400/7exmJEg4_400x400.png"
+    },
+    {
+      "id": 2,
+      "name": "Curso de React",
+      "description": "Como criar aplicativos utilizando React...",
+      "available": false,
+      "workload": "20h",
+      "image": "https://www.luiztools.com.br/wp-content/uploads/2020/06/reactJS.png"
+    },
+  ]
+}

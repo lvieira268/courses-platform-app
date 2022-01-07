@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex: 1;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+i.icon-main {
+  color: #1E0D83;
+  font-size: 112px;
+}
+
+.welcome {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 30px;
+
+  text-transform: uppercase;
+
+  color: #1E0D83;
+}
+
+.description {
+  margin-top: 16px;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+
+  color: #666666;
+}
+
+@media screen and (max-width: 700px) {
+  main {
+    margin-left: 0;
+  }
+}

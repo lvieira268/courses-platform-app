@@ -1,0 +1,43 @@
+.breadcrumb {
+  margin-left: 100px;
+  padding: 14px 30px;
+
+  list-style: none;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #333333;
+  background-color: #dee2e6;
+}
+
+.breadcrumb li {
+  display: inline;
+  font-size: 16px;
+}
+
+.breadcrumb li+li:before {
+  margin: 0 20px;
+
+  color: #333333;
+  content: "\003E";
+}
+
+.breadcrumb li a {
+  color: #333333;
+  text-decoration: none;
+}
+
+.breadcrumb li a:hover {
+  color: #222E44;
+
+}
+
+@media screen and (max-width: 700px) {
+  .breadcrumb {
+    margin-left: 0;
+  }
+}
+
