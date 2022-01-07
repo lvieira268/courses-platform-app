@@ -1,4 +1,7 @@
+/* eslint-disable react/require-default-props */
 import React, { useState, useEffect, useCallback } from 'react';
+import { Path, useForm, UseFormRegister } from 'react-hook-form';
+
 import Breadcrumb from '../../components/Breadcrumb';
 
 import Header from '../../components/Header';
@@ -6,27 +9,58 @@ import Sidebar from '../../components/Sidebar';
 
 import './styles.css';
 import Modal from '../../components/Modal';
-import Input from '../../components/Input';
 import InputImage from '../../components/InputImage';
 
 import api from '../../services/api';
 
 interface ICourses {
   id: number;
-  title: string;
+  name: string;
+  workload: string;
   description: string;
-  available: boolean;
+  available: Date;
   image: string;
 }
 
+type InputProps = {
+  label: string;
+  name: Path<ICourses>;
+  description?: Path<ICourses>;
+  workload?: Path<ICourses>;
+  available?: Path<ICourses>;
+  register: UseFormRegister<ICourses>;
+  required: boolean;
+};
+
+const Input = ({ name, label, register, required }: InputProps) => {
+  return (
+    <div className="input-container">
+      <label htmlFor={`label-${label}`}>{label}</label>
+      <input {...register(name, { required })} />
+    </div>
+  );
+};
+
+const TextArea = ({ name, label, register, required }: InputProps) => {
+  return (
+    <div className="input-container">
+      <label htmlFor={`label-${label}`}>{label}</label>
+      <textarea {...register(name, { required })} />
+    </div>
+  );
+};
+
 const Courses: React.FC = () => {
+  const { register, handleSubmit } = useForm<ICourses>({});
+
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [courses, setCourses] = useState<ICourses[]>([]);
 
+  async function loadCourses(): Promise<void> {
+    await api.get('cursos').then(res => setCourses(res.data));
+  }
+
   useEffect(() => {
-    async function loadCourses(): Promise<void> {
-      await api.get('cursos').then(res => setCourses(res.data));
-    }
     loadCourses();
   }, []);
 
@@ -42,6 +76,15 @@ const Courses: React.FC = () => {
       });
     },
     [courses],
+  );
+
+  const onSubmit = useCallback(
+    async (data: ICourses) => {
+      const available = data.available && (await api.post('/cursos', data));
+      setModalOpen(!modalOpen);
+      loadCourses();
+    },
+    [modalOpen],
   );
 
   return (
@@ -67,7 +110,7 @@ const Courses: React.FC = () => {
                 <div className="card" key={item.id}>
                   <img src={item.image} alt="cover-course" />
                   <div className="text-container">
-                    <p className="title-card">{item.title}</p>
+                    <p className="title-card">{item.name}</p>
                     <p className="description-card">{item.description}</p>
                   </div>
                   <div className="actions-container">
@@ -98,22 +141,42 @@ const Courses: React.FC = () => {
       </div>
       {modalOpen && (
         <Modal isOpen={modalOpen} title="NOVO TREINAMENTO">
-          <InputImage />
-          <Input name="name" label="Nome" type="text" />
-          <Input name="description" label="Descrição" type="textarea" />
-          <Input name="timing" label="Carga Horária" type="text" />
-
-          <div className="modal-inputs">
-            <Input name="active-course" label="Ativação do curso" type="text" />
-            <Input
-              name="disable-course"
-              label="Desativação do curso"
-              type="text"
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <InputImage />
+            <Input label="Nome" name="name" register={register} required />
+            <TextArea
+              label="Descrição"
+              name="description"
+              register={register}
+              required
             />
-          </div>
-          <button type="button" className="btn-create">
-            CRIAR
-          </button>
+            <Input
+              label="Carga Horária"
+              name="workload"
+              register={register}
+              required
+            />
+
+            <div className="modal-inputs">
+              <Input
+                label="Ativação do curso"
+                name="available"
+                register={register}
+                required
+              />
+              <Input
+                label="Desativação do curso"
+                name="available"
+                register={register}
+                required
+              />
+            </div>
+            <div className="button-container">
+              <button type="submit" className="btn-create">
+                CRIAR
+              </button>
+            </div>
+          </form>
         </Modal>
       )}
     </div>
