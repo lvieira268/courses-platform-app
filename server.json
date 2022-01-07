@@ -16,12 +16,5 @@
       "workload": "20h",
       "image": "https://www.luiztools.com.br/wp-content/uploads/2020/06/reactJS.png"
     },
-    {
-      "name": "Curso de CSS",
-      "description": "Se torne um expert em CSS",
-      "workload": "200H",
-      "available": "10/12/2022",
-      "id": 3
-    }
   ]
 }
