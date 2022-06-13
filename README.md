@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Yungas Challenge" title="#Yungas Challenge" src="https://i.ibb.co/wy1Lp4P/bi-book.png" width="250px" />
+    <img alt="Yungas Challenge" title="#Courses Platform App" src="https://i.ibb.co/wy1Lp4P/bi-book.png" width="250px" />
 </h1>
 <p align="center">
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/lvieira268/yungas-challenge">
